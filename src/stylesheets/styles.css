@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway" ;
+}
+
+/* Make the body and html take up the entire page */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Disable scrolling */
+}
+
+/* Set the background color */
+body {
+    background-color: #000f1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* Vertical line styling */
+.line {
+    width: 4px;
+    height: 100%;
+    background-color: #d8bc6d;
+    position: absolute;
+    left: 288px;
+}
+
+/* Image styling */
+.bull-image {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    top: 72px;
+    left: 96px;
+}
+
+/* Button container styling */
+.buttons {
+    position: absolute;
+    top: 258px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Button styling */
+.btn {
+    width: 180px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #d8bc6d;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    border-radius: 10px;
+}
+
+/* Chatbot Styling */
+.chatbot {
+    position: absolute;
+    bottom: 40px; /* Position from bottom right */
+    right: 40px; /* Position from right */
+    width: 333px;
+    height: 75vh; /* 75% of screen height */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    border: 2px solid #d8bc6d; /* Border in the specified color */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chatbot-logo {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+.chatbot-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d8bc6d; /* Change color to d8bc6d */
+}
+
+/* Chatbot message styling */
+.chatbot-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    background-color: #000f1c;
+    color: #d8bc6d;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+}
+
+/* Log Out Button Styling */
+.logout-btn {
+    position: absolute;
+    bottom: 72px; /* Adjust from bottom */
+    left: 50px;  /* Position from left */
+    width: 180px;
+    height: 60px;
+    background-color: #d8bc6d;
+    color: #000f1c;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #bf9b57;
+}
+
+/* Welcome User Styling */
+.welcome-text {
+    position: absolute;
+    top: 50px; /* 50px from top */
+    left: 320px; /* 320px from left */
+    font-size: 36px;
+    color: #fff;
+}
+
+.user {
+    color: #d8bc6d;
+    font-weight: bold;
+}

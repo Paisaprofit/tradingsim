@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Simulation Game</title>
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <script type="text/javascript" src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.development.js"></script>
+</head>
+
+<body>
+    <div id="maincontainer">
+        <div id="chart">
+
+        </div>
+
+        <div id="chatbot">
+            <div id="cb-header">
+                <img src="../public/logo.png" id="cb-logo"/>
+                <h1>Mr. Bull</h1>
+            </div>
+            <div id="chatwindow">
+                <div id="chatmessages">
+                    
+                </div>
+                <div id="chatcontrols">
+                    <input id="chatinput" onkeypress="if(event.key === 'Enter') { addMessage(1, this.value); this.value=''; }" />
+                    <button id="chatsend" onclick="addMessage(1,document.getElementById('chatinput').value);document.getElementById('chatinput').value=''"><h2><b>></b></h2></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <div id="controls-bs" class="controlcont borderright">
+                <h3>Buy/Sell</h3>
+                <input id="control-input" type="number" min="1" step="1" pattern="\d+" />
+                <div class="horizontalflex">
+                    <button class="button" onclick="handlesale(1,null)"> <b><h3>Buy</h3></b></button>
+                    <button class="button" onclick="handlesale(1,10)"> x10</button>
+                    <button class="button" onclick="handlesale(1,100)"> x100</button>
+                </div>
+                <div class="horizontalflex">
+                    <button class="button" onclick="handlesale(0,null)"> <b><h3>Sell</h3></b></button>
+                    <button class="button" onclick="handlesale(0,10)"> x10</button>
+                    <button class="button" onclick="handlesale(0,100)"> x100</button>
+                </div>
+            </div>
+
+            <div id="controls-cs" class="controlcont borderright">
+                <h3 class="center">Chart Settings</h3>
+                <button class="togglebutton" id="rsi" onclick="togglecontrol('rsi')"> <b><h3>RSI</h3></b></button>
+            </div>
+
+            <div id="controls-cp" class="controlcont borderright">
+                <div>
+                    <h3 class="center">Balance</h3>
+                    <h1 id="balance">1000.00</h1>
+                </div>
+                <div>
+                    <h3 class="center">Current Stock Price</h3>
+                    <h1 id="csp">0</h1>
+                </div>
+                <div>
+                    <h3 class="center">Stocks Owned</h3>
+                    <h1 id="so">0</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="scripts/script.js"></script>
+<script src="scripts/chatbox.js"></script>
+<script src="scripts/controls.js"></script>
+<script src="scripts/game.js"></script>
+<script src="scripts/stock_game.js"></script>
+<script src="scripts/data.js"></script>
+
+</html>

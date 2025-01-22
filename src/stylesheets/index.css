@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    font-family: "Raleway";
+}
+
+#maincontainer{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    background-color: #000F1C;
+}
+
+#chart{
+    grid-area: 1 / 1 / 2 / 2;
+    border-color: #E2B941;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+}
+#chatbot{
+    grid-area: 1/2/3/3;
+    padding: 30px;
+    display: flex;
+    flex-direction: column  ;
+    gap: 15px;
+}
+
+#controls{
+    border-color: #E2B941;
+    border-width: 0 3px 0 0;
+    border-style: solid;
+    display: flex;
+    /* flex-direction: row; */
+    /* padding: 30px; */
+
+}
+
+#controls-cp div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1 ;
+}
+
+#cb-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #D0B468;
+}
+
+#cb-logo{
+    width: 64px;
+    height: 64px;
+}
+
+#chatwindow{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+#chatcontrols{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    gap: 15px;
+}
+
+#chatinput{
+    border-radius: 8px;
+    border: 3px solid #D8BC6D;
+    color: white;
+    background: none;
+    padding: 11px;
+    flex-grow: 1;
+    transition: border 0.5s;
+}
+
+#chatinput:focus {
+    outline: none;
+    border-color: #E2B941; /* Change the border color when focused */
+    border-width: 3px;
+}
+
+#chatmessages{
+    height: 75vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#chatmessages {
+    padding-right: 10px; /* Add padding to create space between content and scrollbar */
+}
+#chatmessages::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+#chatmessages::-webkit-scrollbar-thumb {
+    background-color: #D8BC6D; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#chatmessages::-webkit-scrollbar-track {
+    background: none; /* No background for the scrollbar track */
+}
+
+#message.sender {
+    align-self: flex-start;
+}
+
+#message.receiver    {
+    align-self: flex-end;
+}
+
+#message{
+    padding: 30px;
+    width: 75%;
+    background-color: #D8BC6D;
+    color: #000F1C;
+    border-radius: 8px;
+}
+
+#chatsend{
+    aspect-ratio: 1/1;
+    width: auto;
+    height: 100%;
+    padding: 10px auto 10px auto;
+    border-radius: 8px;
+
+    background-color: #D0B468;
+    transition: background-color 0.5s;
+}
+
+#chatsend:hover{
+    background-color: #E2B941;
+}
+
+.controlcont{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #D0B468;
+}
+
+.controlcont h3{
+    font-weight: 300;
+}
+
+.borderright{
+    border-right: 2px solid #D8BC6D;
+}
+
+#control-input{
+    border-radius: 8px;
+    border: 3px solid #D8BC6D;
+    color: white;
+    background: none;
+    padding: 11px;
+    flex-grow: 1;
+    transition: border 0.5s;
+    width: auto;
+    max-height: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#control-input:focus{
+    outline: none;
+    border: 3px solid #E2B941;
+}
+
+.button{
+    padding: 10px 30px 10px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: #D0B468;
+    transition: background-color 0.25s;
+}
+
+.button:hover{
+    background-color: #E2B941;
+}
+
+.horizontalflex{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.togglebutton{
+    padding: 10px 30px 10px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: solid 2px #D0B468;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+.togglebutton.active{
+    
+    background-color: #D0B468;
+    color: #000F1C;
+}
+
+.togglebutton:hover{
+    background-color: #E2B941;
+    color: #000F1C;
+}
+
+.center{
+    text-align: center;
+}
