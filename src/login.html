@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./stylesheets/login.css">
+</head>
+<body>
+  <img src="./public/bull.png" class="icon">
+  <p class="tagline">Paisa Profit</p>
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" required>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+      <button class="log-btn" type="button" onclick="login()">Login</button>
+      <p class="message" id="loginMessage"></p>
+    </form>
+    <a href="register.html">Don't have an Account? Click here to Sign Up</a>
+  </div>
+
+  <script src="scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald";
+}
+
+/* Make the body and html take up the entire page */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Disable scrolling */
+}
+body {
+    background-color: black; /* Original background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+.form-container {
+    position: absolute;
+    top: 2%;
+    background-color: rgb(rgb(41, 21, 67), green, blue);
+    width: 400px;
+      padding: 20px;
+      text-align: center;
+      height: 300px;
+      right: 30%;
+}
+h2 {
+    margin-bottom: 20px;
+    color: aliceblue;
+    font-style: calc();
+    font-size: 43px;
+  }
+  label {
+    color: whitesmoke;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: large;
+  }
+  input {
+    width: 100%;
+    background-color: black;
+    color: #d8bc6d;
+    padding: 13px;
+    font-size: large;
+    margin-bottom: 20px;
+    border-color: black;
+
+  }
+  button {
+    width: 100%;
+    padding: 20px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: whitesmoke;
+  }
+  a {
+    display: block;
+    margin-top: 10px;
+    color:whitesmoke;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .message {
+    color: white;
+    margin-top: 10px;
+  }
+.icon{
+    position: absolute;
+    left:18%;
+    top: 24%;
+    width: 130px;
+    height: 130px;
+    
+}
+.tagline{
+    position: absolute;
+    color: #d8bc6d;
+    left:15%;
+    top: 44%;
+    font-size: 50px;
+}
+.l{
+    position: absolute;
+    background-color: black;
+    color:#d8bc6d;
+    padding: 13px;
+    border-color: black;
+    top: 469px;
+    right: 230px;
+    font-size: medium;
+    padding: 5px;
+
+}

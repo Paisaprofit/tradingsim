@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaisaProfit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+      background: #000F1C; /* Solid dark blue background */
+      color: #d8bc6d; /* Gold replacement */
+    }
+
+    .container {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 5em; /* Larger font size */
+      margin-bottom: 10px;
+      color: transparent;
+      -webkit-text-stroke: 2px #d8bc6d; /* Gold outline */
+      text-transform: uppercase; /* Make text uppercase */
+      letter-spacing: 3px; /* Add spacing between letters */
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 50px;
+      color: #d8bc6d;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .level-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .level {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, #d8bc6d, #a68f55);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #1E1E2F;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .level.locked {
+      background: linear-gradient(to bottom, #333, #555);
+      color: gray;
+      cursor: not-allowed;
+    }
+
+    .level.locked::after {
+      content: '\1F512'; /* Lock emoji */
+      font-size: 2em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: gray;
+    }
+
+    .level:hover {
+      transform: scale(1.2);
+      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .sublevels {
+      display: none;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .sublevel {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, #d8bc6d, #c49e57);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1em;
+      font-weight: bold;
+      color: #1E1E2F;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sublevel:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      .level {
+        width: 140px;
+        height: 140px;
+        font-size: 1.5em;
+      }
+
+      .sublevel {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PaisaProfit</h1>
+    <h2>- Where Finance Meets Fun !</h2>
+
+    <div class="level-grid">
+      <div class="level" onclick="showSublevels(1)">Level 1</div>
+      <div class="level locked">Level 2</div>
+      <div class="level locked">Level 3</div>
+      <div class="level locked">Level 4</div>
+      <div class="level locked">Level 5</div>
+    </div>
+
+    <div id="sublevels-1" class="sublevels">
+      <div class="sublevel" onclick="window.location.href = './game.html'">RSI Basics</div>
+      <div class="sublevel">Trend Impact</div>
+      <div class="sublevel">Current Trends</div>
+      <div class="sublevel">Market Signals</div>
+      <div class="sublevel">Profit Insights</div>
+    </div>
+  </div>
+
+  <script>
+    function showSublevels(level) {
+      if (level === 1) {
+        const sublevels = document.getElementById('sublevels-1');
+        sublevels.style.display = sublevels.style.display === 'none' || !sublevels.style.display ? 'flex' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>
+

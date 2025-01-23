@@ -3,25 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Website</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="./stylesheets/styles.css">
 </head>
 <body>
+  <!-- Profile Icon Button -->
+  <div class="profile-button">
+      <img src="../public/profile_icon.jpg" alt="Profile Icon" class="profile-icon">
+      <span class="profile-hover-text">Profile</span>
+  </div>
+    <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-item">
+            <img src="../public/news1.avif" alt="News 1">
+            <div class="news-text">Sensex gains 566 points as IT stocks surge, AI optimism offsets tariff woes</div>
+          </div>
+          <div class="carousel-item">
+            <img src="../public/news2.webp" alt="News 2">
+            <div class="news-text">Natural Gas, WTI oil, Brent Oil Forecasts Remains Under Pressure</div>
+          </div>
+          <div class="carousel-item">
+            <img src="../public/news4.webp" alt="News 3">
+            <div class="news-text">Indian economy to grow 6.5-6.8% in 2024-25 fiscal, projects Deloitte</div>
+          </div>
+          <div class="carousel-item">
+            <img src="../public/news3.webp" alt="News 4">
+            <div class="news-text">Stock Market Highlights: Sensex ends 567pts up led by Infy, HDFC Bank; Broader indices fall over 1%</div>
+          </div>
+          <div class="carousel-item">
+            <img src="../public/news5.webp" alt="News 5">
+            <div class="news-text">Gold hits 11-week high on softer dollar, Trump policy uncertainty</div>
+          </div>
+          <div class="carousel-item">
+            <img src="../public/news6.avif" alt="News 6">
+            <div class="news-text">Reliance Industries signs MoU to invest Rs 645 cr in Vadhvan port project</div>
+          </div>
+        </div>
+        <div class="navigation-dots">
+          <span class="dot" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
+          <span class="dot" onclick="goToSlide(3)"></span>
+          <span class="dot" onclick="goToSlide(4)"></span>
+          <span class="dot" onclick="goToSlide(5)"></span>
+        </div>
+        <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+        <button class="carousel-button next" onclick="nextSlide()">❯</button>
+      </div>
     <div class="line"></div>
     <img src="../public/bull.png" alt="Bull Image" class="bull-image">
     <div class="buttons">
-        <button class="btn home">Home</button>
-        <button class="btn game" onclick="window.location.href='./game.html'">Game</button>
-        <button class="btn simulation">Simulation</button>
-        <button class="btn learning-page">Learning Page</button>
-        <button class="btn consultation">Consultation</button>
-        <button class="btn trading">Trading</button>
+        <button class="btn home">HOME</button>
+        <button class="btn game" onclick="window.location.href='./lvlsel.html'">GAME</button>
+        <button class="btn virtual-trading" onclick="window.location.href='./sim.html'">VIRTUAL TRADING</button>
+        <button class="btn finnect">FINNECT</button>
+        <button class="btn trading" onclick="window.location.href='./trade.html'">TRADING</button>
+        <button class="btn contact">Contact Us</button>
     </div>
     <!-- Log Out Button -->
     <button class="logout-btn">Log Out</button>
     
     <!-- Welcome User Text -->
-    <div class="welcome-text">Welcome, <span class="user">User</span></div>
+    <div class="welcome-text">Welcome, <span class="user">Trader</span></div>
     
     <!-- Chatbot container -->
     <div class="chatbot">

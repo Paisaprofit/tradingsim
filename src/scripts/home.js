@@ -26,3 +26,39 @@ window.onload = function () {
     // Call the function to display the messages
     displayMessages();
 };
+// script.js
+// script.js
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+const dots = document.querySelectorAll('.dot');
+let currentIndex = 0;
+
+function updateCarousel() {
+  const offset = -currentIndex * 100; // Move carousel horizontally
+  carousel.style.transform = `translateX(${offset}%)`;
+  updateDots();
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % items.length; // Loop to the first slide
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + items.length) % items.length; // Loop to the last slide
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+function updateDots() {
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Auto-scroll every 5 seconds
+setInterval(nextSlide, 5000);

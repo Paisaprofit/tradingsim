@@ -126,8 +126,8 @@ async function generateContinuousData(normalFileName, candlestickFileName, durat
     }
 }
 
-window.pause = () => {window.gameIsPaused = true}
-window.play = () => {window.gameIsPaused = false}
+window.pause = () => {window.gameIsPaused = true;pausetimer()}
+window.play = () => {window.gameIsPaused = false;resumetimer()}
 
 
 // Run the function
