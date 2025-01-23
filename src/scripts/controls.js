@@ -2,10 +2,15 @@ controls = {
     rsi:{
         val:false,
         handler:() => {
+            val=controls.rsi.val;
             const element = document.getElementById("rsi");
             if (element) {
                 element.classList.toggle("active");
             }
+            
+            toggleRSIVisibility(!val)
+            console.log(!val)
+            controls.rsi.val = !val;
         }
     }
 }

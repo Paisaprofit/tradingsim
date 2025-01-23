@@ -1,4 +1,4 @@
-const messages = [];
+messages = [];
 
 const messagemap = {
     "What is trading?": "Trading is the act of buying and selling financial instruments like stocks, bonds, commodities, or currencies with the goal of making a profit.",
@@ -48,31 +48,87 @@ function displayMessage(sender, message) {
     chatMessages.appendChild(messageElement);
 
     if (sender === 1) {
-        const response = messagemap[message] || messagemap["default"];
-        addMessage(0, response);
+        sendMessageStreaming(message).then((r) => {addMessage(0,r.join('\n'))});
+        }
     }
-
-
-}
 
 // Example usage
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function addMessagesWithDelay(x) {
-    await addMessageWithDelay(0, "Hi there! I'm here to help you understand RSI—the Relative Strength Index. Whether you're just starting out or an advanced trader, let's explore RSI together!", x);
-    await addMessageWithDelay(0, "Let’s start with the basics. RSI is a momentum indicator that helps you determine whether a stock is overbought or oversold. It’s like a weather forecast for the stock market!", x);
-    await addMessageWithDelay(0, "RSI, or Relative Strength Index, is a momentum indicator that tells us if a stock might be overbought or oversold. When the RSI value goes above 70, it signals that the stock might be overbought, meaning it could be overvalued and might see a price correction soon. On the other hand, when the RSI drops below 30, it indicates the stock could be oversold, suggesting it might be undervalued and could rise in price.", x);
-    await addMessageWithDelay(0, "So, if you see the RSI below 30, it could be a buying opportunity if other factors support it. If it's above 70, it might be a good time to consider selling or waiting for the price to stabilize. Remember, RSI is most effective when used alongside other indicators like moving averages or volume trends!", x);
-}
+
 
 async function addMessageWithDelay(sender, message, delay) {
     addMessage(sender, message);
     await sleep(delay);
 }
 
-addMessagesWithDelay(5000);
+
+async function sendMessageStreaming(message) {
+    const response = await fetch(('./ai/' + message), {
+        method: 'GET'
+    });
+
+    if (response.ok) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder('utf-8');
+        let result = '';
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            result += decoder.decode(value, { stream: true });
+        }
+        return result.split('\n').map(line => line.trim()).filter(line => line);
+    } else {
+        throw new Error(`Error: Server responded with status ${response.status}`);
+    }
+}
+
+async function sendMessage(message) {
+    try {
+        const response = await sendMessageStreaming(message);
+        response.forEach(chunk => {
+            console.log(chunk);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
+function addInteractiveMessage( message,choice1,choice2, callback) {
+    if (!message) return;
+    messages = []
+    const chatMessages = document.getElementById('chatmessages');
+    while (chatMessages.firstChild) {
+        chatMessages.removeChild(chatMessages.firstChild);
+    }
+    messages.push({ message });
+    displayInteractiveMessage( message,choice1,choice2, callback);
+    
+}
+
+function displayInteractiveMessage(message,choice1,choice2, callback) {
+    const chatMessages = document.getElementById('chatmessages');
+    const messageElement = document.createElement('div');
+    messageElement.innerHTML = `
+        <div id="interactive-message">${message}</div>
+        <br>
+        <div style="display:flex;">
+        <button id="ci1" class="button" onclick="messagecallback(1)">${choice1}</button>
+        ${(choice2 != "") ? '<button id="ci2" class="button" onclick="messagecallback(2)">'+ choice2 + '</button>' : ""}
+        </div>
+    `;
+    chatMessages.appendChild(messageElement);
+
+    console.log(callback);
+    
+    window.messagecallback = callback
+}
+
+
+window.addInteractiveMessage = addInteractiveMessage;
 
 
 

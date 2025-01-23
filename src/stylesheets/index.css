@@ -128,6 +128,17 @@
     background-color: #D8BC6D;
     color: #000F1C;
     border-radius: 8px;
+    font-weight: 550;
+}
+
+#interactive-message{
+    padding: 30px;
+    width: 75%;
+    background-color: #D8BC6D;
+    color: #000F1C;
+    border-radius: 8px;
+    font-weight: 550;
+
 }
 
 #chatsend{
@@ -217,6 +228,11 @@
 .togglebutton:hover{
     background-color: #E2B941;
     color: #000F1C;
+}
+
+
+.togglebutton.animate{
+
 }
 
 .center{

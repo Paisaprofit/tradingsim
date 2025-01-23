@@ -24,8 +24,9 @@ function calculateRSI(data, period = 14) {
     const averageLoss = losses / period;
     const rs = averageGain / averageLoss;
     const rsi = 100 - (100 / (1 + rs));
-    console.log(rsi);
+    // console.log(rsi);
     
+    window.currentRSI = rsi;
     return rsi;
 }
 
@@ -67,8 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
         lineWidth: 2,
     });
 
+    function toggleRSIVisibility(visible) {
+        rsiSeries.applyOptions({ visible: visible });
+    }
+    window.toggleRSIVisibility = toggleRSIVisibility;
+    toggleRSIVisibility(false);
+
     function updateRSI() {
-        console.log("updatersi");
+        // console.log("updatersi");
         
         const rsiData = [];
         const candlestickData = window.data.candlestickData;
@@ -80,9 +87,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: rsi
             });
         }
-
         rsiSeries.setData(rsiData);
     }
+
+    function addRSIMarker(c) {
+        if (mock_data.length === 0) return;
+        const latestRSIData = rsiSeries.data()[rsiSeries.data().length - 1];
+        const marker = {
+            time: latestRSIData.time,
+            position: 'aboveBar',
+            color: "yellow",
+            shape: 'arrowDown',
+            text: c,
+            size: 2, // Increase the size of the marker
+            textSize: 24 // Increase the size of the text
+        };
+        const existingMarkers = rsiSeries.markers() || [];
+        existingMarkers.push(marker);
+        rsiSeries.setMarkers(existingMarkers);
+    }
+    window.addRSIMarker = addRSIMarker;
 
     let count = 0;
 
@@ -98,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         count++;
         if (count <= 50) mainChart.timeScale().fitContent();
-
+        document.latestPrice = newData.close;
         document.getElementById("csp").innerText = newData.close;
         updateRSI();
     };

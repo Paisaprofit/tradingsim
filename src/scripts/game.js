@@ -51,12 +51,15 @@ async function initializeGame() {
   function sellShares(quantity) {
     if (quantity <= 0) return;
     if (gameData.sharesOwned >= quantity) {
+      currentStockPrice = latestPrice;
       const totalRevenue = quantity * currentStockPrice;
       gameData.balance += totalRevenue;
       gameData.sharesOwned -= quantity;
       // saveGameData(loggedInUser, gameData);
       place_marker("Sell " + quantity,1)
+      console.log(`[SOLD] ${quantity} `);
     }
+    
     updateGameUI();
     document.getElementById("balance").innerText = gameData.balance.toFixed(2);
     document.getElementById("so").innerText = gameData.sharesOwned;
