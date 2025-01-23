@@ -318,3 +318,13 @@ body {
   border-radius: 5px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
 }
+<<<<<<< HEAD
+=======
+.plag{
+  position: absolute;
+  top: 66%;
+  right: 30%;
+  color: white;
+  font-size: small;
+}
+>>>>>>> 1fe790cb6917f26b596e6be81a84f24b2b6d9521
