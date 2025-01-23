@@ -203,8 +203,8 @@ function setCountdownTimer(duration) {
             if (--remainingTime < 0) {
                 clearInterval(timerInterval);
                 display.textContent = "Time's up!";
-
-                addMessage(`Time's Up! You can restart the level to continue playing. `)
+                
+                addInteractiveMessage(`Time's Up! You can restart the level to continue playing. `,"continue","",() => {window.history.back();})
             } else {
                 updateDisplay();
             }

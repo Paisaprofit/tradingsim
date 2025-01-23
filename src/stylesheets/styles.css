@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Oswald";
+    font-family: "Raleway";
 }
 
 /* Make the body and html take up the entire page */
@@ -73,6 +73,11 @@ body {
 .btn:hover {
     background-color: #d8bc6d; /* Original fill on hover */
     color: #000f1c; /* Original text color on hover */
+}
+
+.home{
+  background-color: #E2B941 !important; /* Original fill on hover */
+    color: #000f1c; 
 }
 
 /* Chatbot Styling */
@@ -318,13 +323,3 @@ body {
   border-radius: 5px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
 }
-<<<<<<< HEAD
-=======
-.plag{
-  position: absolute;
-  top: 66%;
-  right: 30%;
-  color: white;
-  font-size: small;
-}
->>>>>>> 1fe790cb6917f26b596e6be81a84f24b2b6d9521

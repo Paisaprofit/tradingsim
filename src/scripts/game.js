@@ -18,7 +18,7 @@ async function initializeGame() {
   // Update the game UI
   function updateGameUI() {
     document.getElementById("p").innerText = (gameData.balance - 10000).toFixed(2);
-    document.getElementById("pp").innerText = ((gameData.balance - 10000) / 10).toFixed(2);
+    document.getElementById("pp").innerText = ((gameData.balance - 10000) / 100).toFixed(2);
     console.log(gameData.balance, gameData.sharesOwned, currentStockPrice);
     //   document.getElementById("balance").innerText = gameData.balance.toFixed(2);
     //   document.getElementById("sharesOwned").innerText = gameData.sharesOwned;
