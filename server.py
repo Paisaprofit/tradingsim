@@ -4,6 +4,7 @@ from http.client import HTTPConnection
 from flask import request
 
 def send_message_streaming(message):
+    #local py server, so if it doesnt run when you clone the repo take a break have a kitkat
     connection = HTTPConnection('localhost', 8000)
     connection.putrequest('POST', '/', skip_host=True)
     connection.putheader('Content-Type', 'text/plain')
