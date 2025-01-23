@@ -1,6 +1,6 @@
 controls = {
     rsi:{
-        val:false,
+        val:true,
         handler:() => {
             val=controls.rsi.val;
             const element = document.getElementById("rsi");

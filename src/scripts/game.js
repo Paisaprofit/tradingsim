@@ -14,11 +14,11 @@ async function initializeGame() {
   const stockData = [120];
   let currentStockPrice = latestPrice; // Get initial stock price
   let stockIndex = 0;
-
+  window.updateGameUI = updateGameUI;
   // Update the game UI
   function updateGameUI() {
-    document.getElementById("p").innerText = (gameData.balance - 10000).toFixed(2);
-    document.getElementById("pp").innerText = ((gameData.balance - 10000) / 100).toFixed(2);
+    document.getElementById("p").innerText = (gameData.balance + gameData.sharesOwned*latestPrice - 10000).toFixed(2);
+    document.getElementById("pp").innerText = (gameData.balance + gameData.sharesOwned*latestPrice).toFixed(2);
     console.log(gameData.balance, gameData.sharesOwned, currentStockPrice);
     //   document.getElementById("balance").innerText = gameData.balance.toFixed(2);
     //   document.getElementById("sharesOwned").innerText = gameData.sharesOwned;
@@ -31,6 +31,10 @@ async function initializeGame() {
   }
 
   window.updateGameUI = updateGameUI;
+
+  setInterval(() => {
+    updateGameUI()
+  }, 300);
 
   // Buy shares
   function buyShares(quantity) {
