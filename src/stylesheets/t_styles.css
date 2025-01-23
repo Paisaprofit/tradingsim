@@ -1,0 +1,66 @@
+/* Import Raleway font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  z-index: -1; /* To ensure it's behind the popup */
+}
+.lock{
+  width: 900px;
+  height: 600px;  
+  filter: blur(8px);
+}
+.popup {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #E2B941;
+  color: #E2B941;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  max-height: 250px;
+  height: 100%;
+}
+
+.popup h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.popup a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #E2B941;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.popup a:hover {
+  background-color: #d4a832;
+  cursor: pointer;
+}
