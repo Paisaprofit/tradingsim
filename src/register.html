@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="stylesheets/register.css">
+</head>
+<body>
+  <img src="./public/bull.png" class="icon">
+  <p class="tagline">Paisa Profit</p>
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <div class="form-row">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+      </div>
+      <div class="form-row">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-row">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-row">
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" id="dateOfBirth" required>
+      </div>
+      <div class="form-row">
+        <label for="gender">Gender:</label>
+        <select id="gender" required class="l">
+          <option value="Male" class="l">Male</option>
+          <option value="Female" class="l">Female</option>
+          <option value="Other" class="l">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" required>
+      </div>
+      <div class="form-row">
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" required>
+      </div>
+      <button type="button" onclick="register()">Sign Up</button>
+      <p class="message" id="registerMessage"></p>
+    </form>
+    <a href="login.html">Already have an account? Click here to Login</a>
+  </div>
+
+  <script src="scripts/register.js"></script>
+</body>
+</html>
