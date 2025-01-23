@@ -1,0 +1,294 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif; /* Default font for the entire body */
+}
+
+/* Link to Google font 'Montserrat' */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
+
+/* Set the background color */
+body {
+    background-color: #000f1c;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    padding-left: 20px;
+    overflow-y: scroll; /* Allow scrolling */
+}
+
+/* Header section styling */
+header {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px; /* Shortened distance between PaisaProfit and Finance Networking */
+    position: sticky;
+    top: 0;
+    background-color: #000f1c;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* PaisaProfit text styling (Oswald) */
+h1 {
+    font-family: "Oswald", sans-serif;
+    color: #d8bc6d;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Visible Line Break */
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #d8bc6d;
+    margin: 10px 0; /* Shortened line break */
+}
+
+/* Styling for the Finance Network Box */
+.finance-box {
+    background-color: transparent; /* Removed background fill */
+    color: #d8bc6d; /* Updated text color */
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: left;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 10px; /* Shortened distance */
+}
+
+.finance-box p {
+    font-family: "Oswald", sans-serif;
+    font-size: 22px;
+    color: #d8bc6d; /* Updated color */
+    font-weight: bold;
+}
+
+/* Controls section: filter, sort by, and search */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    position: sticky;
+    top: 100px; /* Adjust position after header */
+    background-color: #000f1c;
+    padding: 10px 0;
+    z-index: 999; /* Keep the controls above the scrollable content */
+}
+
+/* Transparent buttons for Filter and Sort by */
+button {
+    display: flex;
+    align-items: center;
+    background-color: transparent; /* Transparent by default */
+    color: #d8bc6d; /* Text color */
+    font-size: 16px;
+    border: 2px solid #d8bc6d; /* Border color */
+    border-radius: 10px;
+    padding: 6px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added transition effect */
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif; /* Updated font to Montserrat */
+}
+
+/* Hover effect for Filter and Sort by buttons */
+button:hover {
+    background-color: #d8bc6d; /* Button background color on hover */
+    color: #000f1c; /* Text color on hover */
+}
+
+/* Button icon styling */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    transition: fill 0.3s ease; /* Transition for smooth color change */
+}
+
+/* Default icon color - gold variant */
+.icon.filter {
+    background-image: url('../public/filter-icon.png'); /* Gold filter icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon.sort {
+    background-image: url('../public/sort-by-icon.png'); /* Gold sort icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* On hover, icons become gray variant */
+button:hover .icon.filter {
+    background-image: url('../public/filter-icon-grey.png'); /* Grey filter icon on hover */
+}
+
+button:hover .icon.sort {
+    background-image: url('../public/sort-by-icon-grey.png'); /* Grey sort icon on hover */
+}
+
+/* Search box styling */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    padding: 8px 12px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+    background-color: #000f1c; /* Search box background */
+    color: #d8bc6d; /* Text color in search box */
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif; /* Font updated to Montserrat */
+}
+
+/* Adjusted dimensions of search button */
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8bc6d;
+    color: #000f1c;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px; /* Slightly increased padding */
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif; /* Font updated to Montserrat */
+}
+
+/* Search Icon inside the search button */
+.search-icon {
+    width: 20px;  /* Icon size */
+    height: 20px;
+    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+/* On hover, scale the search icon */
+.search-button:hover .search-icon {
+    transform: scale(1.1);  /* Enlarge icon slightly */
+}
+
+/* Adjust icon positioning */
+.search-button img {
+    vertical-align: middle; /* Aligning the image properly within the button */
+}
+
+/* User Profile Tiles - Flex grid for layout */
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 50px; /* Ensuring space for sticky header */
+}
+
+/* Individual Tile styling */
+.tile {
+    background-color: transparent;
+    border: 2px solid #d8bc6d; /* Tile border color */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Update tile text color to d8bc6d */
+.tile-info,
+.tile-name,
+.tile-title,
+.tile-experience,
+.tile-rating {
+    color: #d8bc6d; /* Text color */
+}
+
+/* Hover effect on tiles */
+.tile:hover {
+    transform: scale(1.05); /* Slightly enlarge tile on hover */
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url('../public/person.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.tile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tile-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tile-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #7d7d7d; /* Title color */
+}
+
+.tile-experience {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #d8bc6d; /* Experience color */
+}
+
+.tile-rating {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #d8bc6d;
+    margin-top: 5px;
+}
+
+/* Sticky Header and Controls Section */
+header, .controls {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Content section */
+.content {
+    margin-top: 200px; /* Space for the sticky elements */
+}
+
+/* Media Queries for Responsive Tiles */
+@media (max-width: 768px) {
+    .tiles-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tiles-container {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+}

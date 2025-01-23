@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINNECT | PaisaProfit</title>
+    <link rel="stylesheet" href="stylesheets/fin.css">
+</head>
+<body>
+    <header>
+        <!-- Link to home page on clicking the logo -->
+        <a href="index.html"><img class="logo" src="../public/bull.png" alt="PaisaProfit Logo"></a>
+        <h1>PaisaProfit</h1>
+    </header>
+
+    <!-- Visible Line Break -->
+    <div class="line"></div>
+
+    <!-- Finance Networking Box -->
+    <div class="finance-box">
+        <p>Finance Networking</p>
+    </div>
+
+    <!-- Controls Section with Filter, Sort By, and Search -->
+    <div class="controls">
+        <!-- Filter Button -->
+        <button class="filter-btn" onmouseover="this.querySelector('img').src='../public/filter-icon-grey.png'" onmouseout="this.querySelector('img').src='../public/filter-icon.png'">
+            <img src="../public/filter-icon.png" alt="Filter" class="icon filter">
+            Filter
+        </button>
+
+        <!-- Sort By Button -->
+        <button class="sort-btn" onmouseover="this.querySelector('img').src='../public/sort-by-icon-grey.png'" onmouseout="this.querySelector('img').src='../public/sort-by-icon.png'">
+            <img src="../public/sort-by-icon.png" alt="Sort by" class="icon sort">
+            Sort By
+        </button>
+
+        <!-- Search Box and Button -->
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search...">
+            <button class="search-button">
+                <img src="../public/search-icon.png" alt="Search" class="search-icon">
+            </button>
+        </div>
+    </div>
+
+    <!-- Tiles Container -->
+    <div class="tiles-container">
+        <!-- Tile 1 -->
+        <div class="tile">
+            <img src="../public/person.png" alt="Profile" class="profile-img">
+            <div class="tile-info">
+                <h3 class="tile-name">Name 1</h3>
+                <p class="tile-title">Current Title</p>
+                <p class="tile-experience">3 years experience</p>
+                <p class="tile-rating">Rating: 3.4/5.0</p>
+            </div>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="tile">
+            <img src="../public/person.png" alt="Profile" class="profile-img">
+            <div class="tile-info">
+                <h3 class="tile-name">Name 2</h3>
+                <p class="tile-title">Current Title</p>
+                <p class="tile-experience">5 years experience</p>
+                <p class="tile-rating">Rating: 4.1/5.0</p>
+            </div>
+        </div>
+
+        <!-- Repeat Tiles 3 to 9 -->
+        <!-- Tile 3 - 9 structure goes here, similar to Tile 1 & 2 -->
+    </div>
+
+</body>
+</html>
